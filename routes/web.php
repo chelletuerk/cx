@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'SurveysController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/survey','SurveysController@add');
+Route::post('/survey','SurveysController@create');
+
+Route::get('/survey/{survey}','SurveysController@edit');
+Route::post('/survey/{survey}','SurveysController@update');
