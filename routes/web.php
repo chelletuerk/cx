@@ -11,12 +11,17 @@
 |
 */
 
-Route::get('/', 'SurveysController@index');
+// Route::get('/', 'SurveysController@index');
+// 
+// Auth::routes();
+// 
+// Route::get('/survey','SurveysController@add');
+// Route::post('/survey','SurveysController@create');
+// 
+// Route::get('/survey/{survey}','SurveysController@edit');
+// Route::post('/survey/{survey}','SurveysController@update');
 
-Auth::routes();
-
-Route::get('/survey','SurveysController@add');
-Route::post('/survey','SurveysController@create');
-
-Route::get('/survey/{survey}','SurveysController@edit');
-Route::post('/survey/{survey}','SurveysController@update');
+Route::get('/', function()
+{
+    return User::all();
+});
